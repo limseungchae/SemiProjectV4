@@ -34,7 +34,6 @@ public class JoinServiceImpl implements JoinService{
     // 코드로 json 형태로 결과물을 만들려면 상당히 복잡함
     // ObjectMapper 라이브러리를 이용하면
     // 손쉽게 JSON 유형의 데이터를 생성할 수 있음
-
     @Override
     public String findZipcode(String dong) {
         ObjectMapper mapper = new ObjectMapper();

@@ -11,5 +11,4 @@ public interface JoinService {
     boolean checkUserid(String uid);
 
     boolean loginMember(Member m);
-
 }
