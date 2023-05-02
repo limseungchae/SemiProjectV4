@@ -59,14 +59,16 @@ joinbtn?.addEventListener('click', () => {
     if (joinfrm.userid.value == '') alert('아이디를 입력하세요!!');
     else if (joinfrm.passwd.value == '') alert('비밀번호를 입력하세요!!');
     else if (joinfrm.repasswd.value == '') alert('비밀번호 확인을 입력하세요!!');
-    else if (joinfrm.repasswd.value != passwd.value) alert('비밀번호가 서로 일치하지 않아요!!');
+    else if (joinfrm.repasswd.value != joinfrm.passwd.value) alert('비밀번호가 서로 일치하지 않아요!!');
     else if (joinfrm.zip1.value == '' || zip2.value == '') alert('우편번호를 확인하세요!!');
     else if (joinfrm.addr1.value == '' || addr2.value == '') alert('나머지 주소를 입력하세요!!');
     else if (joinfrm.email1.value == '' || email2.value == '' ) alert('이메일을 확인하세요!!');
     else if (joinfrm.tel1.value == '' || tel2.value == '' ) alert('전화번호를 확인하세요!!');
-    else if (joinfrm.grecaptcha.value == '') alert('자동가입방지 처리에 동의하세요!!');
+    else if (grecaptcha.getResponse() === '') alert('자동가입방지 처리에 동의하세요!!');
     else {
-        location.href='/join/joinok';
+        joinfrm.method = 'post';
+        joinfrm.action = 'join/joinok';
+        joinfrm.submit();
     }
 });
 
@@ -86,8 +88,8 @@ const showzipaddr = (jsons) => {
     jsons = JSON.parse(jsons);
     let addrs = '';
     jsons.forEach(function (data, idx) {
-        // let bunji = (date['bunji'] !== 'null') ? data ['bnuji']: ' ';
-        addrs += `<option>${data['zipcode']} ${data['sido']}  ${data['gugun']}  ${data['dong']}  ${data['bunji']}</option>`;
+        let bunji = (data['bunji'] !== 'null') ? data ['bnuji']: '';
+        addrs += `<option>${data['zipcode']} ${data['sido']}  ${data['gugun']}  ${data['dong']}  ${data[bunji]}</option>`;
     });
     while (addrlist.lastChild) {
         addrlist.removeChild(addrlist.lastChild);
@@ -123,7 +125,7 @@ sendzip?.addEventListener('click', () => {
     }
 })
 
-email3.addEventListener('change', () => {
+email3?.addEventListener('change', () => {
     if(email3.value === '직접입력하기') {
         joinfrm.email2.readOnly = false;
         joinfrm.email2.value = '';
@@ -131,6 +133,12 @@ email3.addEventListener('change', () => {
         joinfrm.email2.readOnly = true;
         joinfrm.email2.value = email3.value;
 
+    }
+})
+
+dong?.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) { // 엔터키를 누르면
+        e.preventDefault(); // 이벤트 전파방지
     }
 })
 
