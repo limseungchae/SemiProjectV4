@@ -51,6 +51,7 @@ const addrlist = document.querySelector('#addrlist');
 const sendzip = document.querySelector('#sendzip');
 const zipmodal = document.querySelector('#zipmodal');
 const zpmdbtn = document.querySelector('#zpmdbtn');
+const email3 = document.querySelector('#email3');
 
 const  modal = new bootstrap.Modal(zipmodal, {});
 
@@ -85,7 +86,8 @@ const showzipaddr = (jsons) => {
     jsons = JSON.parse(jsons);
     let addrs = '';
     jsons.forEach(function (data, idx) {
-        addrs += `<option>${data['zipcode']} ${data['sido']}  ${data['gugun']}  ${data['dong']}</option>`;
+        // let bunji = (date['bunji'] !== 'null') ? data ['bnuji']: ' ';
+        addrs += `<option>${data['zipcode']} ${data['sido']}  ${data['gugun']}  ${data['dong']}  ${data['bunji']}</option>`;
     });
     while (addrlist.lastChild) {
         addrlist.removeChild(addrlist.lastChild);
@@ -118,6 +120,17 @@ sendzip?.addEventListener('click', () => {
        modal.hide();
     } else {
         alert('주소를 선택하세요!!');
+    }
+})
+
+email3.addEventListener('change', () => {
+    if(email3.value === '직접입력하기') {
+        joinfrm.email2.readOnly = false;
+        joinfrm.email2.value = '';
+    } else if(email3.value !== '선택하세요') {
+        joinfrm.email2.readOnly = true;
+        joinfrm.email2.value = email3.value;
+
     }
 })
 
