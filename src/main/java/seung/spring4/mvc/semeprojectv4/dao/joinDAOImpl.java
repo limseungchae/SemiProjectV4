@@ -26,7 +26,7 @@ public class joinDAOImpl implements joinDAO {
 
     @Override
     public int selectOneUserid(String uid) {
-        return 0;
+        return sqlSession.selectOne("join.selectOneUid", uid);
     }
 
     @Override
