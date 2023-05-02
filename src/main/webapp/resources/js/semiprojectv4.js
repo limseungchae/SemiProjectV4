@@ -45,6 +45,10 @@ chk2btn?.addEventListener('click', () => {
 // ------------------------------- joinme
 const joinfrm = document.forms.joinfrm;
 const joinbtn = document.querySelector('#joinbtn');
+const dong = document.querySelector('#dong');
+const zipbtn = document.querySelector('#findzipbtn');
+const addrlist = document.querySelector('#addrlist');
+const sendzip = document.querySelector('#sendzip');
 
 joinbtn?.addEventListener('click', () => {
     if (joinfrm.userid.value == '') alert('아이디를 입력하세요!!');
@@ -60,6 +64,28 @@ joinbtn?.addEventListener('click', () => {
         location.href='/join/joinok';
     }
 });
+
+const showzipaddr = (jsons) => {
+    // for(idx in jsons) {
+    //     console.log(jsons[idx] );
+    // }
+    jsons = JSON.parse(jsons);
+    let addrs = '';
+    jsons.forEach(function (data, idx) {
+        addrs += `<option>${data['zipcode']} ${data['sido']}  ${data['gugun']}  ${data['dong']}</option>`;
+    });
+    while (addrlist.lastChild) {
+        addrlist.removeChild(addrlist.lastChild);
+    }
+    addrlist.innerHTML = addrs;
+};
+
+zipbtn?.addEventListener('click',() => {
+    const url = '/join/zipcode?dong=' + dong.value;
+    fetch(url).then(response => response.text())
+        .then(text => showzipaddr(text));
+
+})
 
 
 
