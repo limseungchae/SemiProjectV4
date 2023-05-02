@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="main">
     <div class="mt-5">
@@ -48,7 +48,7 @@
 
                 <div class="row col-11 offset-1 mb-3 align-items-center">
                     <label class="col-2 form-label text-danger text-end"
-                           for="jumin1">주민번호</label>
+                           for="jumin1a">주민번호</label>
                     <div class="col-3">
                         <input type="text" name="jumin1" id="jumin1a" readonly
                                class="form-control border-danger bg-light" value="${mb.jumin1}"> </div>
@@ -195,12 +195,16 @@
     <div id="zipmodal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">우편번호 찾기</div>
+                <div class="modal-header">
+                    <h3 class="modal-title">우편번호 찾기</h3>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                </div>
                 <div class="modal-body">
-                    <form class="zipfrm" id="zipfrm">
+                    <form name="zipfrm" id="zipfrm">
                         <div class="row justify-content-center align-items-center">
                             <label class="col-3 form-label text-end ms-5" for="dong">
-                                검색하실 주소의<br> 동이름을 입력하세요.</label>
+                                검색하실 주소의<br> 동이름을 입력하세요</label>
                             <div class="col-4">
                                 <input type="text" name="dong" id="dong"
                                        class="form-control border-primary"> </div>
@@ -239,13 +243,12 @@
                                     <option>123-456 서울 구로구 구로동</option>
                                 </select>
                             </div>
-
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" id="sendzip">
-                        <i class="fas fa-check-sgyare"></i> 선택하고 닫기</button>
+                        <i class="fas fa-check-square"></i> 선택하고 닫기</button>
                 </div>
             </div>
         </div>
