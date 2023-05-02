@@ -6,8 +6,9 @@ public class Zipcode {
     private String sido;
     private String gugun;
     private String dong;
+    private String bunji;
     private String ri;
-    private String bungi;
+
 
     public Zipcode() {
     }
@@ -44,19 +45,19 @@ public class Zipcode {
         this.dong = dong;
     }
 
+    public String getBunji() {
+        return bunji;
+    }
+
+    public void setBunji(String bunji) {
+        this.bunji = bunji;
+    }
+
     public String getRi() {
         return ri;
     }
 
     public void setRi(String ri) {
         this.ri = ri;
-    }
-
-    public String getBungi() {
-        return bungi;
-    }
-
-    public void setBungi(String bungi) {
-        this.bungi = bungi;
     }
 }

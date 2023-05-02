@@ -46,7 +46,7 @@
     <div></div>
 
     <div class="text-center">
-        <button type="button" id="go2index" class="btn-danger">
+        <button type="button" id="go2index" class="btn btn-danger">
             <i class="fas fs-home"></i> 메인으로 이동
         </button>
     </div>
