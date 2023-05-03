@@ -189,7 +189,7 @@
             <input type="hidden" name="zipcode" id="zipcode">
             <input type="hidden" name="email" id="email">
             <input type="hidden" name="phone" id="phone">
-            <input type="hidden" name="ckeckuid" id="ckeckuid">
+            <input type="hidden" name="checkuid" id="checkuid">
 
         </form>
 
@@ -260,3 +260,5 @@
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </div>
+
+<script src="/assets/js/join.js"></script>
