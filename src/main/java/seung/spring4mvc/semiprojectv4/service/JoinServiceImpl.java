@@ -1,11 +1,11 @@
-package seung.spring4.mvc.semiprojectv4.service;
+package seung.spring4mvc.semiprojectv4.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import seung.spring4.mvc.semiprojectv4.dao.joinDAO;
-import seung.spring4.mvc.semiprojectv4.model.Member;
+import seung.spring4mvc.semiprojectv4.dao.joinDAO;
+import seung.spring4mvc.semiprojectv4.model.Member;
 
 @Service("jnsrv")
 public class JoinServiceImpl implements JoinService{

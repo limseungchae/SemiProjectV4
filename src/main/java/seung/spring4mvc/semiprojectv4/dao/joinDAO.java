@@ -1,7 +1,7 @@
-package seung.spring4.mvc.semiprojectv4.dao;
+package seung.spring4mvc.semiprojectv4.dao;
 
-import seung.spring4.mvc.semiprojectv4.model.Member;
-import seung.spring4.mvc.semiprojectv4.model.Zipcode;
+import seung.spring4mvc.semiprojectv4.model.Member;
+import seung.spring4mvc.semiprojectv4.model.Zipcode;
 
 import java.util.List;
 

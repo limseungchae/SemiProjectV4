@@ -1,4 +1,4 @@
-package seung.spring4.mvc.semiprojectv4.model;
+package seung.spring4mvc.semiprojectv4.model;
 
 public class Zipcode {
 

@@ -1,10 +1,10 @@
-package seung.spring4.mvc.semiprojectv4.dao;
+package seung.spring4mvc.semiprojectv4.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import seung.spring4.mvc.semiprojectv4.model.Member;
-import seung.spring4.mvc.semiprojectv4.model.Zipcode;
+import seung.spring4mvc.semiprojectv4.model.Member;
+import seung.spring4mvc.semiprojectv4.model.Zipcode;
 
 import java.util.List;
 
