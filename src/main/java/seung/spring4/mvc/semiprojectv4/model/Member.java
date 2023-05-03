@@ -11,7 +11,7 @@ public class Member {
     private String zipcode;
     private String addr1;
     private String addr2;
-    private String email1;
+    private String email;
     private String phone;
     private String regdate;
 
@@ -90,12 +90,12 @@ public class Member {
         this.addr2 = addr2;
     }
 
-    public String getEmail1() {
-        return email1;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmail1(String email1) {
-        this.email1 = email1;
+    public void setEmail(String email1) {
+        this.email = email1;
     }
 
     public String getPhone() {

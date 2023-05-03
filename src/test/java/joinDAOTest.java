@@ -34,17 +34,11 @@ public class joinDAOTest {
     @Test
     public void newMember() {
         Member m = new Member();
-        m.setName("혜교");
-        m.setJumin1("123456");
-        m.setJumin2("1234567");
-        m.setUserid("abc123");
-        m.setPasswd("abc123");
-        m.setZipcode("서울시 구로구");
-        m.setAddr1("123-456");
-        m.setAddr2("123-456");
-        m.setEmail1("abc123");
-        m.setPhone("123-456");
+        m.setName("혜교");   m.setJumin1("123456");   m.setJumin2("1234567");
+        m.setUserid("abc123");  m.setPasswd("abc123");
+        m.setZipcode("123-456");  m.setAddr1("123-456"); m.setAddr2("123-456");
+        m.setEmail("123-456");  m.setPhone("123-456");
 
-        assertEquals(1, sqlSession.insert("join.insertMember", m));
+        assertEquals(1, sqlSession.insert("join.insertMember", m) );
     }
 }
