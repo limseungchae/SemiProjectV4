@@ -69,7 +69,12 @@ joinbtn?.addEventListener('click', () => {
     else if (joinfrm.email1.value == '' || joinfrm.email2.value == '' ) alert('이메일을 확인하세요!!');
     else if (joinfrm.tel1.value == '' || joinfrm.tel2.value == '' ) alert('전화번호를 확인하세요!!');
     else if (grecaptcha.getResponse() === '') alert('자동가입방지 처리에 동의하세요!!');
+    else if (joinfrm.ckeckuid.value === 'no') alert('아이디 중복 체크하세요!!');
     else {
+        joinfrm.zipcode.value = joinfrm.zip1.value + '-' + joinfrm.zip2.value;
+        joinfrm.email.value = joinfrm.email1.value + '@' + joinfrm.email2.value;
+        joinfrm.phone.value = joinfrm.tel1.value + '-' + joinfrm.tel2.value + '-' + joinfrm.tel3.value;
+
         joinfrm.method = 'post';
         joinfrm.action = '/join/joinok';
         joinfrm.submit();
@@ -149,10 +154,12 @@ dong?.addEventListener('keydown', (e) => {
 const styleCheckuid = (chkuid) => {
     let msg = '사용 불가능한 아이디입니다!!';
     uidmsg.style.color = 'red';
+    joinfrm.ckeckuid.value = 'no';
 
     if (chkuid === '0') {
         msg = '사용 가능한 아이디입니다!!';
         uidmsg.style.color = 'blue';
+        joinfrm.ckeckuid.value = 'yes';
     }
     uidmsg.innerText = msg;
 };
@@ -160,6 +167,7 @@ userid?.addEventListener('blur', () => {
     if (userid.value === '') {
         uidmsg.innerText = '6~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다';
         uidmsg.style.color = 'gray';
+        joinfrm.ckeckuid.value = 'no';
         return;
     }
     const url = '/join/checkuid?uid=' + userid.value;
@@ -170,6 +178,7 @@ userid?.addEventListener('blur', () => {
 repasswd?.addEventListener('blur', () => {
     let pmsg = '비밀번호가 서로 일치하지 않습니다!!';
     pwdmsg.style.color = 'red';
+
 
     if ( repasswd.value === joinfrm.passwd.value ) {
         pmsg = '비밀번호는 서로 일치합니다!!';
