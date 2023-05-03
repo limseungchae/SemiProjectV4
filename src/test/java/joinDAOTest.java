@@ -4,8 +4,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.Optional;
+import seung.spring4.mvc.semiprojectv4.model.Member;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -30,5 +29,22 @@ public class joinDAOTest {
 
         uid = "abc123";       // 존재하는 아이디 검사
         assertEquals(1, (int)sqlSession.selectOne("join.selectOneUid", uid) );
+    }
+
+    @Test
+    public void newMember() {
+        Member m = new Member();
+        m.setName("혜교");
+        m.setJumin1("123456");
+        m.setJumin2("1234567");
+        m.setUserid("abc123");
+        m.setPasswd("abc123");
+        m.setZipcode("서울시 구로구");
+        m.setAddr1("123-456");
+        m.setAddr2("123-456");
+        m.setEmail1("abc123");
+        m.setPhone("123-456");
+
+        assertEquals(1, sqlSession.insert("join.insertMember", m));
     }
 }

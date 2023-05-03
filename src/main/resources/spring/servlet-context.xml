@@ -33,6 +33,6 @@
     </bean>
 
 
-    <context:component-scan base-package="seung.spring4.mvc.semeprojectv4" />
+    <context:component-scan base-package="seung.spring4.mvc.semiprojectv4" />
 
 </beans>

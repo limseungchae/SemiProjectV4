@@ -1,7 +1,7 @@
-package seung.spring4.mvc.semeprojectv4.dao;
+package seung.spring4.mvc.semiprojectv4.dao;
 
-import seung.spring4.mvc.semeprojectv4.model.Member;
-import seung.spring4.mvc.semeprojectv4.model.Zipcode;
+import seung.spring4.mvc.semiprojectv4.model.Member;
+import seung.spring4.mvc.semiprojectv4.model.Zipcode;
 
 import java.util.List;
 
@@ -15,4 +15,5 @@ public interface joinDAO {
 
     int selectOneMember(Member m);
 
+    int insertMember(Member m);
 }

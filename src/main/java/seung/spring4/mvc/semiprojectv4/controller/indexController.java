@@ -1,4 +1,4 @@
-package seung.spring4.mvc.semeprojectv4.controller;
+package seung.spring4.mvc.semiprojectv4.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

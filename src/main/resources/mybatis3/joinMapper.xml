@@ -3,13 +3,21 @@
 <mapper namespace="join">
 
     <select id="findZipcode" statementType="PREPARED"
-            parameterType="String" resultType="seung.spring4.mvc.semeprojectv4.model.Zipcode">
+            parameterType="String" resultType="seung.spring4.mvc.semiprojectv4.model.Zipcode">
         select * from zipcode2013 where dong like #{dong}
     </select>
 
     <select id="selectOneUid" statementType="PREPARED" parameterType="String"
             resultType="int">
-        select count(userid) cnt from member where userid = #{uid}
+        select count(userid) cnt from member2 where userid = #{uid}
     </select>
+
+    <insert id="insertMember" statementType="PREPARED"
+            parameterType="seung.spring4.mvc.semiprojectv4.model.Member">
+        insert into member2 (name, jumin1, jumin2, userid, passwd,
+            zipcode, addr1, addr2, email, phone) values
+            (#{name},#{jumin1},#{jumin2},#{userid},#{passwd},
+             #{zipcode},#{addr1},#{addr2},#{email1},#{phone})
+    </insert>
 
 </mapper>

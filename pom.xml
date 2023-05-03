@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>seung.spring4.mvc</groupId>
-    <artifactId>semeprojectv4</artifactId>
+    <artifactId>semiprojectv4</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>SemiProjectV4</name>
     <packaging>war</packaging>

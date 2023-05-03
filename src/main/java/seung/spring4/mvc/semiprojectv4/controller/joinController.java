@@ -1,11 +1,11 @@
-package seung.spring4.mvc.semeprojectv4.controller;
+package seung.spring4.mvc.semiprojectv4.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import seung.spring4.mvc.semeprojectv4.model.Member;
-import seung.spring4.mvc.semeprojectv4.service.JoinService;
+import seung.spring4.mvc.semiprojectv4.model.Member;
+import seung.spring4.mvc.semiprojectv4.service.JoinService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -37,6 +37,17 @@ public class joinController {
     @GetMapping("/joinok")
     public String joinok() {
         return "join/joinok.tiles";
+    }
+
+    @PostMapping("/joinok")
+    public String joinok(Member m, String grecaptcha) {
+        String view = "error.tiles";
+
+        if(jnsrv.newMember(m))
+            view = "join/joinok.tiles";
+
+
+        return view;
     }
 
     // 우편번호 검색

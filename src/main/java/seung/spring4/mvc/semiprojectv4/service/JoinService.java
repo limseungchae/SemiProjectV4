@@ -1,6 +1,6 @@
-package seung.spring4.mvc.semeprojectv4.service;
+package seung.spring4.mvc.semiprojectv4.service;
 
-import seung.spring4.mvc.semeprojectv4.model.Member;
+import seung.spring4.mvc.semiprojectv4.model.Member;
 
 public interface JoinService {
 

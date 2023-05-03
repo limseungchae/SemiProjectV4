@@ -13,7 +13,7 @@
 
         <Logger name="org.mybatis.*" level="debug" />
 
-        <Logger name="seung.spring4.mvc.semeprojectv4" level="info"/>
+        <Logger name="seung.spring4.mvc.semiprojectv4" level="info"/>
 
         <Root level="info">
             <AppenderRef ref="Console"/>
