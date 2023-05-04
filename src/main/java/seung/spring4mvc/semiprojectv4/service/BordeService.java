@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BordeService {
 
-    List<Board> readBoard();
+    List<Board> readBoard(int cpage);
 }

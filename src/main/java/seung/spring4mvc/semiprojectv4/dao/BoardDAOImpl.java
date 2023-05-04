@@ -13,7 +13,7 @@ public class BoardDAOImpl implements BoardDAO{
     @Autowired private SqlSession sqlSession;
 
     @Override
-    public List<Board> selectBoard() {
-        return sqlSession.selectList("board.selectBoard");
+    public List<Board> selectBoard(int stbno) {
+        return sqlSession.selectList("board.selectBoard", stbno);
     }
 }
