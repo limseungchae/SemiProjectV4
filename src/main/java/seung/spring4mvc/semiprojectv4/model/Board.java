@@ -4,7 +4,7 @@ public class Board {
     private String bno;
     private String title;
     private String userid;
-    private String thimbs;
+    private String thumbs;
     private String views;
     private String content;
     private String regdate;
@@ -12,11 +12,11 @@ public class Board {
     public Board() {
     }
 
-    public Board(String bno, String title, String userid, String thimbs, String views, String content, String regdate) {
+    public Board(String bno, String title, String userid, String thumbs, String views, String content, String regdate) {
         this.bno = bno;
         this.title = title;
         this.userid = userid;
-        this.thimbs = thimbs;
+        this.thumbs = thumbs;
         this.views = views;
         this.content = content;
         this.regdate = regdate;
@@ -46,12 +46,12 @@ public class Board {
         this.userid = userid;
     }
 
-    public String getThimbs() {
-        return thimbs;
+    public String getThumbs() {
+        return thumbs;
     }
 
-    public void setThimbs(String thimbs) {
-        this.thimbs = thimbs;
+    public void setThuumbs(String thumbs) {
+        this.thumbs = thumbs;
     }
 
     public String getViews() {

@@ -17,6 +17,7 @@ public class BoardController {
     @GetMapping("/list")
     public ModelAndView list(int cpg) {
         ModelAndView mv =new ModelAndView();
+        // System.out.println(bdsrv.readBoard(cpg).size());
 
         mv.setViewName("board/list.tiles");
         mv.addObject("bdlist",bdsrv.readBoard(cpg));
