@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import seung.spring4mvc.semiprojectv4.dao.BoardDAO;
 import seung.spring4mvc.semiprojectv4.model.Board;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service("bdsrv")
 public class BoardServiceImpl implements BoardService{
@@ -21,7 +23,25 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
+    public List<Board> readBoard(int cpage, String ftype, String fkey) {
+        int stbno = (cpage - 1) * 25;
+
+        // 처리시 사용할 데이터들을 해쉬맵에 담아서 보냄
+        Map<String, Object> params = new HashMap<>();
+        params.put("stbno", stbno);
+        params.put("ftype", ftype);
+        params.put("fkey", fkey);
+
+        return bddao.selectBoard(params);
+    }
+
+    @Override
     public int countBoard() {
         return bddao.countBoard();
+    }
+
+    @Override
+    public int countBoard(String ftype, String fkey) {
+        return 0;
     }
 }
