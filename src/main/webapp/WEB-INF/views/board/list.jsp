@@ -29,8 +29,13 @@
     // startPage = ((cp - 1) / 10) * 10 + 1
     // endPage = startPage + 10 - 1
 %>
-
+<%-- 검색기능 x 목록 조회 --%>
 <c:set var="pglink" value="/board/list?cpg=" />
+
+<%-- 검색기능 o 목록 조회 --%>
+<c:if test="${not empty param.fkey}">
+    <c:set var="pglink" value="/board/find?ftype=${param.ftype}&fkey=${param.fkey}&cpg=" />
+</c:if>
 
 <div id="main">
     <div class="mt-5">
