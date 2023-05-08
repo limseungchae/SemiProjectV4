@@ -4,12 +4,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import seung.spring4mvc.semiprojectv4.model.Board;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -43,5 +43,16 @@ public class BoardDAOTest {
 
         assertNotEquals(0, (int)sqlSession.selectOne("board.countFindBoard", params) );
     }
+
+    @Test
+    public void insertBoard() {
+        Board b = new Board();
+        b.setTitle("테스트입니다");
+        b.setUserid("abc123");
+        b.setContent("아잉~ 냉무, 제곧내~");
+
+        assertEquals(1, (int)sqlSession.insert("board.insertBoard", b));
+    }
+
 
 }
