@@ -45,26 +45,27 @@
 
     <div class="row mt-5">
         <div class="row offset-2 col-6">
-            <div class="col-3">
-                <select class="form-select" name="findtype">
-                    <option value="title">제목</option>
-                    <option value="titcont">제목+내용</option>
-                    <option value="content">내용</option>
-                    <option value="userid">작성자</option>
-                </select></div>
-
-            <div class="col-4">
-                <input type="text" class="form-control col-2" id="findkey"
-                       value="${param.fkey}"></div>
-
-            <div class="col-3">
-            <button type="button" class="btn btn-light" id="findbtn">
-                <i class="fa-solid fa-magnifying-glass"> </i> 검색하기 </button></div>
+            <c:if test="${not empty sessionScope.UID}">
+                <div class="col-3">
+                    <select class="form-select" id="findtype">
+                        <option value="title">제목</option>
+                        <option value="titcont">제목+내용</option>
+                        <option value="content">내용</option>
+                        <option value="userid">작성자</option>
+                    </select></div>
+                <div class="col-4">
+                    <input type="text" class="form-control col-2" id="findkey"
+                           value="${param.fkey}"></div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-light" id="findbtn">
+                        <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div></c:if>
+            <c:if test="${empty sessionScope.UID}">&nbsp;</c:if>
         </div>
-
         <div class="col-2 text-end">
-            <button type="button" class="btn btn-light" id="newbtn">
-                <i class="fa fa-plus-circle"> </i> 새글쓰기 </button>
+            <c:if test="${not empty sessionScope.UID}">
+                <button type="button" class="btn btn-light" id="newbtn">
+                    <i class="fa fa-plus-circle"> </i> 새글쓰기</button></c:if>
+            <c:if test="${empty sessionScope.UID}">&nbsp;</c:if>
         </div>
     </div>
 
