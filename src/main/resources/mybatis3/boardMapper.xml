@@ -52,4 +52,8 @@
             resultType="seung.spring4mvc.semiprojectv4.model.Board">
         select * from board where bno = #{bno}
     </select>
+
+    <update id="countViewBoard" statementType="PREPARED" parameterType="String">
+        update board set views = views + 1 where bno = #{bno}
+    </update>
 </mapper>
