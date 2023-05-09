@@ -46,4 +46,10 @@
         insert into board (title, userid, content)
         values (#{title}, #{userid}, #{content});
     </insert>
+
+    <select id="selectOneBoard" statementType="PREPARED"
+            parameterType="String"
+            resultType="seung.spring4mvc.semiprojectv4.model.Board">
+        select * from board where bno = #{bno}
+    </select>
 </mapper>
